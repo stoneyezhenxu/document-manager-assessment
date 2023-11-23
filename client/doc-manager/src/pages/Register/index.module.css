@@ -1,0 +1,29 @@
+.LoginForm {
+  padding-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginCard {
+  background-color: whitesmoke;
+  width: 350px;
+}
+
+.register_button {
+  width: 100%;
+}
+
+.loginTips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginTips span {
+  padding-left: 5px;
+  font-weight: bold;
+  color: black;
+  text-decoration: underline;
+  /* border-bottom: 1px solid gray; */
+}

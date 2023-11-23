@@ -1,0 +1,14 @@
+.LoginForm {
+  padding-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LoginCard {
+  background-color: whitesmoke;
+  width: 350px;
+}
+
+.login_button {
+  width: 100%;
+}
