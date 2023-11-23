@@ -1,15 +1,12 @@
-import './App.css';
-import FileVersions from './FileVersions'
+import './App.css'
 
 
-function App() {
+function App () {
   return (
     <div className="App">
-      <header className="App-header">
-        <FileVersions />
-      </header>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
