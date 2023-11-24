@@ -79,7 +79,7 @@ def get_local_file_path(file_uuid: str, file_name: str, file_type: str) -> str:
 
 def save_file_to_local(file_uuid: str, file_name: str, file_type: str, file_obj: Optional):
     dir_path = Path("{}/{}/{}/".format(settings.APPS_DIR, 'static', file_type))
-    dir_path.mkdir(exist_ok=True)
+    os.makedirs(dir_path,exist_ok=True)
 
     file_path = os.path.join(dir_path, '{}_{}'.format(file_uuid, file_name))
 

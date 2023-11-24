@@ -29,14 +29,14 @@ class FileVersionViewSet(RetrieveModelMixin, ListModelMixin, CreateModelMixin, G
         return self.queryset.filter(user=self.request.user.id)
 
     def list(self, request, *args, **kwargs):
-        # get resources  -> GET /api/users/files/
-        logging.info("FileVersionViewSet -> list is called! ")
+        # get resources  -> GET /api/v1/files/
+        logging.info("FileVersionViewSet -> list is called! request.data = {}".format(request.data))
         instances = self.get_queryset().order_by('-create_at')
         serializer = FileVersionListSerializer(instance=instances, many=True)
         return Response(status=status.HTTP_200_OK, data=serializer.data)
 
     def create(self, request, *args, **kwargs):
-        # post file  -> POST /api/users/files/
+        # post file  -> POST /api/v1/files/
         logging.info("FileVersionViewSet -> create is called! ")
         request_data, error_infos = utils.valid_request_for_files_post(request_data=request.data)
         logging.info('request_data: {}'.format(request_data))

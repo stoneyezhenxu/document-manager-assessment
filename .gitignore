@@ -283,3 +283,5 @@ propylon_document_manager/media/
 ../../.idea/
 ../.idea/
 .idea/
+
+./propylon_document_manager/static

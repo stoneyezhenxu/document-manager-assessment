@@ -3,11 +3,11 @@ class GlobalValue:
     ApiVersion = 'v1'
 
     # FileType
-    ImgsType = 'imgs'
-    DocsType = 'docs'
-    VideosType = 'videos'
+    ImgsType = 'Images'
+    DocsType = 'Docs'
+    VideosType = 'Videos'
     ProcedureType = 'Procedures'
-    OthersType = 'others'
+    OthersType = 'Others'
 
     FileTypes_choices = (
         (DocsType, DocsType),

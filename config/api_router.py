@@ -12,7 +12,7 @@ if settings.DEBUG:
 else:
     router = SimpleRouter()
 router.register("users", UserViewSet)
-router.register("user/files", FileVersionViewSet)
+router.register("files", FileVersionViewSet)
 app_name = "api"
 urlpatterns = [
     path('login/', LoginView.as_view(), name='api-login'),
