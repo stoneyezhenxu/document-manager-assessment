@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Button, Checkbox, Form, Input, Col, Row, Card, message } from 'antd'
+import { Button, Checkbox, Form, Input, Card, message } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 import { axiosAPI as axios, TOKEN_NAME } from '../../utils'
 import styles from './index.module.css'

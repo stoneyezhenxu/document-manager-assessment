@@ -10,9 +10,9 @@ axiosAPI.interceptors.request.use((config) => {
     const { url } = config
 
     if (
-        url.startsWith('/api')
-        && !url.startsWith('/api/login')
-        && !url.startsWith('/api/register')
+        url.startsWith('/api/v1')
+        && !url.startsWith('/api/v1/login')
+        && !url.startsWith('/api/v1/register')
     ) {
         config.headers.Authorization = `Token ${getToken()}`
 
