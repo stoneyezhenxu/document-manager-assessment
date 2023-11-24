@@ -1,0 +1,11 @@
+.LoginForm {
+  padding-top: 10%;
+  /* border: 1px solid gray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SummitButton {
+  padding-left: 100px;
+}
