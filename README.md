@@ -1,56 +1,45 @@
 # Propylon Document Manager
 
-The Propylon Document Management System is a streamlined web application comprising a fundamental API backend and a client  based on Django and React. It facilitates users in storing files at specific URLs for subsequent retrieval. The system employs Django as the backend framework and adheres to a RESTful design for its API endpoints.
+The **Propylon Document Management System** is a streamlined web application comprising a fundamental API backend and a client  based on Django and **React**. It facilitates users in storing files at specific URLs for subsequent retrieval. The system employs **Django Restful Framwork** as the backend  and adheres to a RESTful design for its API endpoints.
 
 
 
-## 1. Main Functionals
+## 1. Main Functionalities
 
-​		The main functional modules of the "Propylon Document Management" System are as follows:
+The primary functional modules of the "Propylon Document Management" System include:
 
 #### 1.1 Login Module
 
-- Provide functionality for user registration & login & logout.	
-- Validate for fileds value of usernameemail, password.
+- Facilitates user registration, login, and logout functionalities.
+- Validates fields such as username/email and password.
 
 #### 1.2 User Dashboard 
 
-After login, user can get the whole view about the uploaded file details.
+Upon logging in, users can access a comprehensive view of uploaded file details.
 
-- Supported filter the files by file type (Imgs, Docs, Videos, Procedures,Others)
-
-- Display comprehensive information likes Filename, Version, Url, Size, Type, CreateTime, Desc .
-
-- 支持分页功能
-
-  
+- Supports filtering files by type (Images, Documents, Videos, Procedures, Others).
+- Displays detailed information such as Filename, Version, URL, Size, Type, CreateTime, and Description.
+- Provides pagination functionality.
 
 #### 1.3 File Upload Module 
 
 - Stores files of any type and name
 - Stores files at any URL
 
-
-
 #### 1.4 File retrieve Module
 
-- Does not allow interaction by non-authenticated users
-- Does not allow a user to access files submitted by another user
-
-​		
+- Restricts interaction to authenticated users only.
+- Prevents a user from accessing files submitted by another user.
 
 #### 1.5  Download the Resource Module 
 
-- ​	Does not allow interaction by non-authenticated users
-  - Does not allow a user to access files submitted by another user
-
-
+- Supports the Download of User-Indexed Resources
 
 ### 1.6 Auth Management Module
 
-- ​	Does not allow interaction by non-authenticated users
+- Restricts interaction to authenticated users only.
 
-- ​	Does not allow a user to access files submitted by another user
+- Ensures a user cannot access files submitted by another user.
   
 
 ## 2. API Documents
@@ -59,11 +48,13 @@ After login, user can get the whole view about the uploaded file details.
 
 - Api Version:  `v1`
 
-Tips: only `Register API` `Login API`  do not need the auth. The rest api should be called with the `Auth Token` in the headers
+Only the Register API and Login API do not require authentication.
+
+For other APIs, the Auth Token should be included in the headers.
 
 #### 2.1 Register API
 
-Tips: user register by email, username and password.    Email shoule be unique.
+User registration involves providing a unique email, username, and password. The email must be unique across users.
 
 `POST  /api/v1/register/`
 
@@ -93,7 +84,7 @@ curl -X POST  \
 
 #### 2.2 Login API
 
-Tips: Get the auth token by login 
+Obtain the Auth Token by logging in.
 
 `POST  /api/v1/login/`
 
@@ -122,7 +113,7 @@ curl -X POST  \
 
 #### 2.3 Logout API
 
-Tips: Remove the auth token by logout
+Remove the Auth Token by logging out.
 
 `GET  /api/v1/logout/`
 
@@ -147,12 +138,10 @@ curl -X GET  \
 
 #### 2.4 Upload File API
 
-Tips: 
-		user can specific any valid `url` like  `/xx/xxxx/xxxxx/xxxx/` ,
 
-​		Then `file_url` will be generate with format like  ` /files/{user specific url}/{file_name}'`
+Users can specify any valid URL like  `/xx/xxxx/xxxxx/xxxx/` ,
 
-
+Then `file_url` will be generate with format like  ` /files/{user specific url}/{file_name}'`
 
 `POST  /api/v1/files/`
 
@@ -189,7 +178,7 @@ curl -X POST  \
 
 #### 2.5 All files List API
 
-Tips: Get the all files of login user, and show files infomation in the dashboard.
+Retrieve all files of the logged-in user and display file information in the dashboard.
 
 `GET  /api/v1/files/`
 
@@ -213,9 +202,9 @@ curl -X GET  \
 #### 2.6 File Versions List API
 
 Tips:
-	 	Get the all versions of specific file by `hash(file_url)` 
+	 	Obtain all versions of a specific file by  `hash(file_url)` ,
 
-​		 `file_url_hash` means use the `hashlib.md5() `  hash for the  `file_url`
+​		 where`file_url_hash`  is obtained using `hashlib.md5() ` of  `file_url`
 
 `GET  /api/v1/files/{file_url_hash} `
 
@@ -262,17 +251,13 @@ curl -X GET  \
 }
 ```
 
-#### 
-
-#### 2.8 Download File API 
-
-Tips:
-
-​			Get the  file content data by  `file_uuid` , `file_type`, `file_name`
-
-​			Find the file obj data by  from server storage (local static file) ,and return the 
 
 
+2.8 Download File API 
+
+Retrieve file content data by `file_uuid`, `file_type`, and `file_name`.
+
+Locate the file object data from the server storage (local static file) and return it.
 
 `GET  /api/v1/files/content `
 
@@ -299,8 +284,6 @@ curl -X GET  \
 
 ## 3. Getting Started
 
-
-
 ### 3.1 Clone the repository
 
 ```shell
@@ -322,8 +305,6 @@ git clone https://github.com/stoneyezhenxu/document-manager-assessment
 2. `yarn install` to install the dependencies.
 
 3. `yarn start` to start the React development server.
-
-   
 
    
 
@@ -383,7 +364,7 @@ $ coverage html
 $ open htmlcov/index.html
 ```
 
-#### 5.4 Running tests with pytest
+### 5.4 Running tests with pytest
 
 ```shell
 $ pytest
