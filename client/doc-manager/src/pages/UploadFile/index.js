@@ -18,10 +18,10 @@ const UploadFile = () => {
         const cur_file_obj = values.files.fileList[0]
         var file_url = ''
         if (values.file_url.startsWith('/')) {
-            file_url = `/files${values.file_url}/${cur_file_obj.name}`
+            file_url = `/files${values.file_url}${cur_file_obj.name}`
         }
         else {
-            file_url = `/files/${values.file_url}/${cur_file_obj.name}`
+            file_url = `/files/${values.file_url}${cur_file_obj.name}`
         }
         const formData = new FormData()
         console.log('values', values)

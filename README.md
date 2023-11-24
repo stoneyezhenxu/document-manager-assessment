@@ -1,8 +1,6 @@
 # Propylon Document Manager
 
-The Propylon Document Management System is a streamlined web application comprising a fundamental API backend and a client  based on React and Django. It facilitates users in storing files at specific URLs for subsequent retrieval. The system employs Django as the backend framework and adheres to a RESTful design for its API endpoints.
-
-
+The Propylon Document Management System is a streamlined web application comprising a fundamental API backend and a client  based on Django and React. It facilitates users in storing files at specific URLs for subsequent retrieval. The system employs Django as the backend framework and adheres to a RESTful design for its API endpoints.
 
 
 
@@ -24,6 +22,10 @@ After login, user can get the whole view about the uploaded file details.
 - 支持分页功能
 
 ### 1.3 FileVersions Details
+
+​		
+
+
 
 
 
@@ -208,8 +210,6 @@ curl -X GET  \
 }
 ```
 
-#### 
-
 #### 2.7 File Details API
 
 Tips:
@@ -271,6 +271,8 @@ curl -X GET  \
 
 ​	
 
+3. How to run
+
 ### 1. Getting Started
 
 1. [Install Pipenv](https://pipenv.pypa.io/en/latest/installation/)
@@ -315,5 +317,19 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 #### Running tests with pytest
 
     $ pytest
-
+    
     $ pytest
+
+## 2.Screenshots
+
+
+
+#### 2.1 Register Page 
+
+<img src="https://github.com/stoneyezhenxu/imgHosting/blob/main/imgs/image-20231124191748247.png?raw=true" alt="image-20231124191748247" style="zoom:50%;" />
+
+#### 2.2 Login Page
+
+<img src="https://github.com/stoneyezhenxu/imgHosting/blob/main/imgs/image-20231124192401321.png?raw=true" alt="image-20231124192401321" style="zoom:50%;" />
+
+2.3 
