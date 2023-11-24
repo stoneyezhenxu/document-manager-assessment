@@ -1,0 +1,43 @@
+.LoginForm {
+  padding-top: 20%;
+  /* border: 1px solid gray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Form {
+  border: 1px solid gray;
+  padding: 100px;
+}
+
+.Card {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CardButtons {
+  display: flex;
+  flex-direction: column;
+}
+.CardButtons button {
+  margin-bottom: 20px;
+}
+.CardTitle {
+  /* border-bottom: 1px solid gray; */
+}
+
+.CardInfos > div {
+  font-size: 20px;
+}
+
+.CardInfos > div span {
+  margin-left: 5px;
+  font-weight: 200;
+}
+
+.TableContent {
+  margin: 0 100px;
+}
