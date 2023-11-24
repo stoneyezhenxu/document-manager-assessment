@@ -3,12 +3,12 @@ from rest_framework import serializers
 
 User = get_user_model()
 
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["name", "url"]
+        fields = ["email", "password"]
 
-        extra_kwargs = {
-            "url": {"view_name": "api:user-detail", "lookup_field": "pk"},
-        }
+class RegisterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['email', "username", "password"]
