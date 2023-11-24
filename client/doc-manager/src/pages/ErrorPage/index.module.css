@@ -1,0 +1,19 @@
+.ErrorCard {
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ErrorCard > div {
+  margin: 20px;
+}
+
+.ErrorCard > div span {
+  color: blue;
+  font-weight: 500;
+  border-bottom: 1px solid gray;
+}
