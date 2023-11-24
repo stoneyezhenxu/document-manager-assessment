@@ -4,30 +4,54 @@ The Propylon Document Management System is a streamlined web application compris
 
 
 
-## 1. Functionals
+## 1. Main Functionals
 
 ​		The main functional modules of the "Propylon Document Management" System are as follows:
 
-### 1.1 Login Module
+#### 1.1 Login Module
 
 - Provide functionality for user registration & login & logout.	
 - Validate for fileds value of usernameemail, password.
 
-### 1.2 User Dashboard 
+#### 1.2 User Dashboard 
 
 After login, user can get the whole view about the uploaded file details.
 
 - Supported filter the files by file type (Imgs, Docs, Videos, Procedures,Others)
+
 - Display comprehensive information likes Filename, Version, Url, Size, Type, CreateTime, Desc .
+
 - 支持分页功能
 
-### 1.3 FileVersions Details
+  
+
+#### 1.3 File Upload Module 
+
+- Stores files of any type and name
+- Stores files at any URL
+
+
+
+#### 1.4 File retrieve Module
+
+- Does not allow interaction by non-authenticated users
+- Does not allow a user to access files submitted by another user
 
 ​		
 
+#### 1.5  Download the Resource Module 
+
+- ​	Does not allow interaction by non-authenticated users
+  - Does not allow a user to access files submitted by another user
 
 
 
+### 1.6 Auth Management Module
+
+- ​	Does not allow interaction by non-authenticated users
+
+- ​	Does not allow a user to access files submitted by another user
+  
 
 ## 2. API Documents
 
@@ -271,58 +295,39 @@ curl -X GET  \
 
 ​	
 
-3. How to run
 
-### 1. Getting Started
 
-1. [Install Pipenv](https://pipenv.pypa.io/en/latest/installation/)
+## 3. Getting Started
+
+
+
+### 3.1 Clone the repository
+
+```shell
+git clone https://github.com/stoneyezhenxu/document-manager-assessment
+```
+
+#### 3.2 Start backend  server
+
+1. [Install Pipenv](https://pipenv.pypa.io/en/latest/installation/)  Manages your Python virtual environments by Pipenv.
 2. This project requires Python 3.11 so you will need to ensure that this version of Python is installed on your OS before building the virtual environment.
-3. `$ pipenv install -r requirements/local.txt`.  If Python 3.11 is not the default Python version on your system you may need to explicitly create the virtual environment (`$ python3.11 -m venv .venv`) prior to running the install command. 
-4. `$ pipenv run python manage.py migrate` to create the database.
-5. `$ pipenv run python manage.py load_file_fixtures` to create the fixture file versions.
-6. `$ pipenv run python manage.py runserver 0.0.0.0:8001` to start the development server on port 8001.
-7. Navigate to the client/doc-manager directory.
-8. `$ npm install` to install the dependencies.
-9. `$ npm start` to start the React development server.
+3. `pipenv install -r requirements/local.txt`.  
+4. `pipenv run python manage.py migrate` to create the database.
+5. `pipenv run python manage.py runserver 0.0.0.0:8001` to start the development server on port 8001.
 
-[![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
-[![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+#### 3.3 Run frontend application
 
-## Settings
+1. Navigate to the client/doc-manager directory.
 
-Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
+2. `yarn install` to install the dependencies.
 
-## Basic Commands
+3. `yarn start` to start the React development server.
 
-### Setting Up Your Users
+   
 
-- To create a **superuser account**, use this command:
+   
 
-      $ python manage.py createsuperuser
-
-### Type checks
-
-Running type checks with mypy:
-
-    $ mypy propylon_document_manager
-
-### Test coverage
-
-To run the tests, check your test coverage, and generate an HTML coverage report:
-
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
-
-#### Running tests with pytest
-
-    $ pytest
-    
-    $ pytest
-
-## 2.Screenshots
-
-
+## 4. Screenshots
 
 #### 2.1 Register Page 
 
@@ -332,4 +337,55 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 
 <img src="https://github.com/stoneyezhenxu/imgHosting/blob/main/imgs/image-20231124192401321.png?raw=true" alt="image-20231124192401321" style="zoom:50%;" />
 
-2.3 
+#### 2.3 Dashboard Page
+
+![image-20231124194208364](https://github.com/stoneyezhenxu/imgHosting/blob/main/imgs/image-20231124194208364.png?raw=true)
+
+
+
+#### 2.4 Upload Page 
+
+![image-20231124194523468](https://github.com/stoneyezhenxu/imgHosting/blob/main/imgs/image-20231124194523468.png?raw=true)
+
+#### 2.5 File All Versions Page
+
+![image-20231124194714919](https://github.com/stoneyezhenxu/imgHosting/blob/main/imgs/image-20231124194714919.png?raw=true)
+
+#### 2.6  File Details Page![image-20231124194925506](https://github.com/stoneyezhenxu/imgHosting/blob/main/imgs/image-20231124194925506.png?raw=true)
+
+
+
+## 5. Basic Commands
+
+### 5.1 Setting Up Your Users
+
+- To create a **superuser account**, use this command:
+
+  ```shell
+  $ python manage.py createsuperuser
+  ```
+
+### 5.2 Type checks
+
+Running type checks with mypy:
+
+```shell
+$ mypy propylon_document_manager
+```
+
+### 5.3 Test coverage
+
+To run the tests, check your test coverage, and generate an HTML coverage report:
+
+```shell
+$ coverage run -m pytest
+$ coverage html
+$ open htmlcov/index.html
+```
+
+#### 5.4 Running tests with pytest
+
+```shell
+$ pytest
+```
+
