@@ -8,7 +8,7 @@ from propylon_document_manager.utils.global_value import GlobalValue
 # API URLS
 urlpatterns = [
     # API base url
-    path(f"api/{GlobalValue.ApiVersion}", include("config.api_router")),
+    path(f"api/{GlobalValue.ApiVersion}/", include("config.api_router")),
     # DRF auth token
     path(f"{GlobalValue.ApiVersion}/api-auth/", include("rest_framework.urls")),
     path(f"{GlobalValue.ApiVersion}/auth-token/", obtain_auth_token),
