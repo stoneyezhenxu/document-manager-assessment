@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from propylon_document_manager.file_versions.models import FileVersion
+from file_versions.models import FileVersion
 from propylon_document_manager.utils.global_value import GlobalValue
 
 

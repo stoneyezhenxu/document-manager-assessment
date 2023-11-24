@@ -11,8 +11,8 @@ from rest_framework import status
 
 from propylon_document_manager.utils import utils
 from propylon_document_manager.utils.global_value import GlobalValue
-from propylon_document_manager.file_versions.models import FileVersion
-from propylon_document_manager.file_versions.api.serializers import FileVersionSerializer
+from file_versions.models import FileVersion
+from .serializers import FileVersionSerializer
 
 User = get_user_model()
 

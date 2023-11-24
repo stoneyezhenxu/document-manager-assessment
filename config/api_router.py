@@ -1,17 +1,20 @@
 from django.conf import settings
-from rest_framework.routers import DefaultRouter, SimpleRouter
+from django.urls import path
 
-from propylon_document_manager.users.api.views import UserViewSet
+from rest_framework.routers import DefaultRouter, SimpleRouter
+from propylon_document_manager.users.api.views import UserViewSet, LoginView, LogoutView, RegisterView
 from propylon_document_manager.file_versions.api.views import FileVersionViewSet
 
 if settings.DEBUG:
     router = DefaultRouter()
 else:
     router = SimpleRouter()
-
 router.register("users", UserViewSet)
-router.register("file_versions", FileVersionViewSet)
-
-
+router.register("user/files", FileVersionViewSet)
 app_name = "api"
-urlpatterns = router.urls
+urlpatterns = [
+    path('login/', LoginView.as_view(), name='api-login'),
+    path('logout/', LogoutView.as_view(), name='api-logout'),
+    path('register/', RegisterView.as_view(), name='api-register'),
+]
+urlpatterns += router.urls
