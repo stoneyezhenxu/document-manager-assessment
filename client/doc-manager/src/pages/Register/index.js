@@ -1,30 +1,27 @@
-import { Link, useLocation, useNavigate, Navigate } from 'react-router-dom'
-import { axiosAPI as axios, TOKEN_NAME } from '../../utils'
-import styles from './index.module.css'
-import { Button, Checkbox, Form, Input, Col, Row, Card, message } from 'antd'
+import { useNavigate } from 'react-router-dom'
+import { Button, Form, Input, Card, message } from 'antd'
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons'
+import { axiosAPI as axios } from '../../utils'
+import styles from './index.module.css'
 
 
 const Register = () => {
   const navigate = useNavigate()
-
   const onFinish = async (e) => {
     console.log(`username:${e.username}; email: ${e.email}; password:${e.password}`)
-    const result = await axios.post('/api/register/', {
+    const result = await axios.post('/api/v1/register/', {
       username: e.username,
       email: e.email,
       password: e.password
     })
 
-    console.log(result)
     if (result.status === 200) {
-      message.success('Register successed!')
+      message.success('Register successed! Jump to Login page!')
       navigate('/login')
     } else {
-      message.error(`Register failed ! Error: result ${result.div}`)
+      message.error(`Register failed ! Error: result ${result.data}`)
     }
   }
-
 
   return (<div className={styles.LoginForm}>
 
@@ -58,8 +55,6 @@ const Register = () => {
           />
         </Form.Item>
 
-
-
         <Form.Item>
           <Button type="primary" htmlType="submit" className={styles.register_button}>
             Register
@@ -67,7 +62,7 @@ const Register = () => {
         </Form.Item>
 
         <div className={styles.loginTips} onClick={() => navigate('/login')}>
-          Already have an account? <span>Log in</span>
+          Already have an account? <span>Sign in</span>
         </div>
       </Form>
     </Card>
