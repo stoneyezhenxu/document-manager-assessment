@@ -1,16 +1,15 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { Button, Checkbox, Form, Input, Col, Row, Card, message } from 'antd'
+import { LockOutlined, MailOutlined } from '@ant-design/icons'
 import { axiosAPI as axios, TOKEN_NAME } from '../../utils'
 import styles from './index.module.css'
-import { Button, Checkbox, Form, Input, Col, Row, Card, message } from 'antd'
-import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons'
 
 
 const Login = () => {
     const navigate = useNavigate()
     const onFinish = async (e) => {
         console.log(`email: ${e.email} password:${e.password}`)
-
-        const result = await axios.post('/api/login/', {
+        const result = await axios.post('/api/v1/login/', {
             username: e.email,
             password: e.password
         })
@@ -20,7 +19,7 @@ const Login = () => {
             message.success('Login successed!')
             navigate('/')
         } else {
-            message.error('Login failed !')
+            message.error(`Log in failed ! Error: ${result.data}`)
         }
     }
 
@@ -60,6 +59,9 @@ const Login = () => {
                         Log in
                     </Button>
                 </Form.Item>
+                <div className={styles.RegisterTips} onClick={() => navigate('/register')}>
+                    Haven't got an account yet? <span>Sign up </span>
+                </div>
             </Form>
         </Card>
 

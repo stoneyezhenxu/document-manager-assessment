@@ -1,5 +1,5 @@
 .LoginForm {
-  padding-top: 20%;
+  padding-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,4 +11,17 @@
 
 .login_button {
   width: 100%;
+}
+
+.RegisterTips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RegisterTips span {
+  padding-left: 5px;
+  font-weight: bold;
+  color: black;
+  text-decoration: underline;
 }
