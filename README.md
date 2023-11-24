@@ -123,7 +123,7 @@ Remove the Auth Token by logging out.
 
 ```shell
 curl -X GET  \
-  'http:/ip:port/api/v1/login/' \
+  'http:/ip:port/api/v1/logout/' \
    -H "Authorization: Token 6119fb3fa535d92e0b23fdbe04f610bde1ab4611" 
 ```
 
@@ -149,20 +149,20 @@ Body :  `form-data`
 
 Form-data including fields as follow:
 
-| Fields    | Value | Type   | Required | Desc                                                         |
-| :-------- | ----- | :----- | :------- | :----------------------------------------------------------- |
-| file_desc | '     | string | Yes      | current desc for file like modify infos                      |
-| file_url  |       | string | Yes      | generated with format like '/files/{user specific url}/{file_name}' |
-| file_name |       | string | Yes      | file name                                                    |
-| file_size |       | float  | Yes      | file size                                                    |
-| file_uid  |       | string | Optional | file unique id                                               |
-| file_obj  |       | File   | Yes      | file obj                                                     |
+| Fields    | Type   | Required | Desc                                                         |
+| :-------- | :----- | :------- | :----------------------------------------------------------- |
+| file_desc | string | Yes      | current desc for file like modify infos                      |
+| file_url  | string | Yes      | generated with format like '/files/{user specific url}/{file_name}' |
+| file_name | string | Yes      | file name                                                    |
+| file_size | float  | Yes      | file size                                                    |
+| file_uid  | string | Optional | file unique id                                               |
+| file_obj  | File   | Yes      | file obj                                                     |
 
 ```shell
 curl -X POST  \
   'http:/ip:port/api/v1/files/' \
   -H "Authorization: Token 6119fb3fa535d92e0b23fdbe04f610bde1ab4611" 
-  -d  form-data
+  -d  {form-data}
 ```
 
 **Responses**
@@ -228,7 +228,7 @@ curl -X GET  \
 Tips:
 	 	Get the  file details by  specific `file_url` and `revision`
 
-​		 `file_url_hash` means use the `hashlib.md5() `  hash for the  `file_url`
+​		 where `file_url_hash` is obtained by using  `hashlib.md5() `  of  `file_url`
 
 ​		 `revision` is the `file_version`
 
@@ -253,7 +253,7 @@ curl -X GET  \
 
 
 
-2.8 Download File API 
+#### 2.8 Download File API 
 
 Retrieve file content data by `file_uuid`, `file_type`, and `file_name`.
 
