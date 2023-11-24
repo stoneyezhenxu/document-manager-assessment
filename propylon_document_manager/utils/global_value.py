@@ -1,4 +1,7 @@
 class GlobalValue:
+    # current api version
+    ApiVersion = 'v1'
+
     # FileType
     ImgsType = 'imgs'
     DocsType = 'docs'
