@@ -41,3 +41,10 @@ class GlobalValue:
     FileUuid = 'file_uuid'
     FileVersion = 'file_version'
     FileNameHash = 'file_name_hash'
+    FileDesc = 'file_desc'
+    FIleCreateTime = 'create_at'
+
+    # Email
+    EmailFormatError = 'email format is error, should like xxx@xxx.com'
+    UsernameError = 'the length of username should between 4 and  15'
+    PasswordError = 'the length of username should between 4 and  15'
